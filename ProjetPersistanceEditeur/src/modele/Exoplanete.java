@@ -1,23 +1,24 @@
 package modele;
 
 public class Exoplanete {
+	private int id;
 	private String nom;
 	private String nomEtoile;
-	private float masse;
-	private float rayon;
-	private float flux;
-	private int temperature;
-	private float periode;
-	private float distance;
+	private String masse;
+	private String rayon;
+	private String flux;
+	private String temperature;
+	private String periode;
+	private String distance;
 	private String zone;
-	private float ist;
-	private float sph;
-	private float hzd;
-	private float hzc;
-	private float hza;
+	private String ist;
+	private String sph;
+	private String hzd;
+	private String hzc;
+	private String hza;
 	private String pClasse;
 	private String hClasse;
-	private float phi;
+	private String phi;
 	private String status;
 	private String decouverte;
 
@@ -26,7 +27,15 @@ public class Exoplanete {
 	
 	public String getInfos()
 	{
-		return "" + nom + " " + masse;
+		return "planete:" + nom + " étoile:" + nomEtoile + " masse:" + masse + " rayon:" + rayon;
+	}
+	
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
 	}
 
 	public String getNom() {
@@ -45,51 +54,51 @@ public class Exoplanete {
 		this.nomEtoile = nomEtoile;
 	}
 
-	public float getMasse() {
+	public String getMasse() {
 		return masse;
 	}
 
-	public void setMasse(float masse) {
+	public void setMasse(String masse) {
 		this.masse = masse;
 	}
 
-	public float getRayon() {
+	public String getRayon() {
 		return rayon;
 	}
 
-	public void setRayon(float rayon) {
+	public void setRayon(String rayon) {
 		this.rayon = rayon;
 	}
 
-	public float getFlux() {
+	public String getFlux() {
 		return flux;
 	}
 
-	public void setFlux(float flux) {
+	public void setFlux(String flux) {
 		this.flux = flux;
 	}
 
-	public int getTemperature() {
+	public String getTemperature() {
 		return temperature;
 	}
 
-	public void setTemperature(int temperature) {
+	public void setTemperature(String temperature) {
 		this.temperature = temperature;
 	}
 
-	public float getPeriode() {
+	public String getPeriode() {
 		return periode;
 	}
 
-	public void setPeriode(float periode) {
+	public void setPeriode(String periode) {
 		this.periode = periode;
 	}
 
-	public float getDistance() {
+	public String getDistance() {
 		return distance;
 	}
 
-	public void setDistance(float distance) {
+	public void setDistance(String distance) {
 		this.distance = distance;
 	}
 
@@ -101,43 +110,43 @@ public class Exoplanete {
 		this.zone = zone;
 	}
 
-	public float getIst() {
+	public String getIst() {
 		return ist;
 	}
 
-	public void setIst(float ist) {
+	public void setIst(String ist) {
 		this.ist = ist;
 	}
 
-	public float getSph() {
+	public String getSph() {
 		return sph;
 	}
 
-	public void setSph(float sph) {
+	public void setSph(String sph) {
 		this.sph = sph;
 	}
 
-	public float getHzd() {
+	public String getHzd() {
 		return hzd;
 	}
 
-	public void setHzd(float hzd) {
+	public void setHzd(String hzd) {
 		this.hzd = hzd;
 	}
 
-	public float getHzc() {
+	public String getHzc() {
 		return hzc;
 	}
 
-	public void setHzc(float hzc) {
+	public void setHzc(String hzc) {
 		this.hzc = hzc;
 	}
 
-	public float getHza() {
+	public String getHza() {
 		return hza;
 	}
 
-	public void setHza(float hza) {
+	public void setHza(String hza) {
 		this.hza = hza;
 	}
 
@@ -157,11 +166,11 @@ public class Exoplanete {
 		this.hClasse = hClasse;
 	}
 
-	public float getPhi() {
+	public String getPhi() {
 		return phi;
 	}
 
-	public void setPhi(float phi) {
+	public void setPhi(String phi) {
 		this.phi = phi;
 	}
 

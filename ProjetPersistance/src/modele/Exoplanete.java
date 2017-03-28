@@ -27,7 +27,7 @@ public class Exoplanete {
 	
 	public String getInfos()
 	{
-		return "" + nom;
+		return "planete:" + nom + " étoile:" + nomEtoile + " masse:" + masse + " rayon:" + rayon;
 	}
 	
 	public int getId() {

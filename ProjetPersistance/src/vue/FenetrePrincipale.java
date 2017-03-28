@@ -9,21 +9,16 @@ import javax.swing.JTabbedPane;
 
 
 
+@SuppressWarnings("serial")
 public class FenetrePrincipale extends JFrame
 {
-	private JPanel panneauPrincipal;
-	
-	private String exoPlanete;
-	
 	JPanel jp1;
 	JPanel jp2;
 	JPanel jp3;
 	
 	public FenetrePrincipale()
 	{
-		super();
-		
-		
+		super();		
 		afficherFenetre();
 	}
 	
@@ -33,7 +28,7 @@ public class FenetrePrincipale extends JFrame
 		JTabbedPane jtp = new JTabbedPane();
 		getContentPane().add(jtp);
 		
-		jp1 = new JPanel(new GridLayout(30,0));
+		jp1 = new JPanel(new GridLayout(45,0));
 		jp2 = new JPanel(new GridLayout(30,0));
 		jp3 = new JPanel(new GridLayout(30,0));
 		
@@ -43,7 +38,7 @@ public class FenetrePrincipale extends JFrame
 		
 		
 		
-		setSize(650, 700);
+		setSize(700, 1000);
 		setResizable(false);
 		setLocationRelativeTo(null);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -52,10 +47,13 @@ public class FenetrePrincipale extends JFrame
 	
 	public void afficherExo(String[] planeteString)
 	{
+		jp1.removeAll();
+		
 		for(String exo : planeteString)
 		{
 			jp1.add(new JLabel(exo));
 		}
+		
 		jp1.revalidate();
 	}
 

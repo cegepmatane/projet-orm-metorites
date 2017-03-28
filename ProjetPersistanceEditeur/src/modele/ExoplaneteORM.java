@@ -32,7 +32,7 @@ public class ExoplaneteORM
 	{
 		LinkedList<Exoplanete> planetes = new LinkedList<Exoplanete>();
 		
-		Iterator listeExoplanete = session.createQuery("from Exoplanete ").iterate();
+		Iterator listeExoplanete = session.createQuery("from Exoplanete").iterate();
 		while(listeExoplanete.hasNext())
 		{
 			Exoplanete exoplanete = (Exoplanete)listeExoplanete.next(); // ca prend le constructeur vide

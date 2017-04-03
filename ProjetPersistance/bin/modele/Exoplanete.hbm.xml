@@ -1,0 +1,34 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 2.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-2.0.dtd">
+<hibernate-mapping>
+
+<class name="modele.Exoplanete" table="exoplanetes">
+
+	<id name="id" column="id_exoplanete" type="int">
+		<generator class="native"/>
+	</id>
+	
+	<property name="nom" column="planete" type="string"/>
+	<property name="nomEtoile" column="etoile" type="string"/>
+	<property name="masse" column="masse" type="string"/>
+	<property name="rayon" column="rayon" type="string"/>
+	<property name="flux" column="flux" type="string"/>
+	<property name="temperature" column="temperature" type="string"/>
+	<property name="periode" column="periode" type="string"/>
+	<property name="distance" column="distance" type="string"/>
+	<property name="zone" column="zone" type="string"/>
+	<property name="ist" column="ist" type="string"/>
+	<property name="sph" column="sph" type="string"/>
+	<property name="hzd" column="hzd" type="string"/>
+	<property name="hzc" column="hzc" type="string"/>
+	<property name="hza" column="hza" type="string"/>
+	<property name="pClasse" column="pClasse" type="string"/>
+	<property name="hClasse" column="hClasse" type="string"/>
+	<property name="phi" column="phi" type="string"/>
+	<property name="status" column="status" type="string"/>
+	<property name="decouverte" column="decouverte" type="string"/>
+	
+
+</class>
+
+</hibernate-mapping>

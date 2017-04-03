@@ -1,6 +1,7 @@
 package modele;
 
-public class Exoplanete {
+public class Exoplanete 
+{
 	private int id;
 	private String nom;
 	private String nomEtoile;

@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 28, 2017 at 01:05 PM
+-- Generation Time: Apr 04, 2017 at 12:13 PM
 -- Server version: 5.7.11
 -- PHP Version: 5.6.19
 
@@ -27,7 +27,7 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `exoplanetes` (
-  `id_exoplanetes` int(11) NOT NULL,
+  `id_exoplanete` int(11) NOT NULL,
   `planete` varchar(18) DEFAULT NULL,
   `etoile` varchar(16) DEFAULT NULL,
   `typeEtoile` varchar(5) DEFAULT NULL,
@@ -55,7 +55,7 @@ CREATE TABLE `exoplanetes` (
 -- Dumping data for table `exoplanetes`
 --
 
-INSERT INTO `exoplanetes` (`id_exoplanetes`, `planete`, `etoile`, `typeEtoile`, `masse`, `rayon`, `flux`, `temperature`, `periode`, `distance`, `zone`, `ist`, `sph`, `hzd`, `hzc`, `hza`, `pClasse`, `hClasse`, `phi`, `distance2`, `status`, `decouverte`) VALUES
+INSERT INTO `exoplanetes` (`id_exoplanete`, `planete`, `etoile`, `typeEtoile`, `masse`, `rayon`, `flux`, `temperature`, `periode`, `distance`, `zone`, `ist`, `sph`, `hzd`, `hzc`, `hza`, `pClasse`, `hClasse`, `phi`, `distance2`, `status`, `decouverte`) VALUES
 (1, 'Earth', 'Sun', 'G2V', '1.00', '1.00', '1.00', '255', '365.24', NULL, 'conservative habitable', '1.00', '0.72', '-0.50', '-0.31', '-0.52', 'Terrienne chaude', 'Mésoplanète', '4.37', '0', 'Pas une exoplanète', 'Préhistorique'),
 (2, 'Proxima Centauri b', 'Proxima Centauri', 'M6Ve', '=1.3', '0.8 – 1.1 – 1.4', '0.65', '234', '11.186', '4.22', 'conservative habitable', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
 (3, 'Gliese 667 Cc', 'Gliese 667 C', 'M3V', '=3.8', '1.1 – 1.5 – 2.0', '0.88', '277', '28.143 ± 0.029', '23.62', 'conservative habitable', '0.84', '0.64', '-0.62', '-0.15', ' +0.21', 'Terrienne chaude', 'Mésoplanète', NULL, '2017-06-23 00:00:00', 'Confirmée', '2011'),
@@ -108,7 +108,7 @@ INSERT INTO `exoplanetes` (`id_exoplanetes`, `planete`, `etoile`, `typeEtoile`, 
 -- Indexes for table `exoplanetes`
 --
 ALTER TABLE `exoplanetes`
-  ADD PRIMARY KEY (`id_exoplanetes`);
+  ADD PRIMARY KEY (`id_exoplanete`);
 
 --
 -- AUTO_INCREMENT for dumped tables
@@ -118,7 +118,7 @@ ALTER TABLE `exoplanetes`
 -- AUTO_INCREMENT for table `exoplanetes`
 --
 ALTER TABLE `exoplanetes`
-  MODIFY `id_exoplanetes` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=44;
+  MODIFY `id_exoplanete` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=44;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

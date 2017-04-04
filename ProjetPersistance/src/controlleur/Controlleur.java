@@ -1,5 +1,7 @@
 package controlleur;
 
+import java.io.IOException;
+
 import modele.*;
 import vue.*;
 
@@ -14,7 +16,7 @@ public class Controlleur
 		vue = new FenetrePrincipale();
 	}
 	
-	public void afficherPlanetes()
+	public void afficherPlanetes() throws IOException
 	{		
 		Exoplanete[] planetes = modeleORM.lire();
 		String[] planeteString = new String[planetes.length];
@@ -27,7 +29,7 @@ public class Controlleur
 		vue.afficherExo(planeteString);
 	}
 	
-	public static void main(String[] args) 
+	public static void main(String[] args) throws IOException 
 	{
 		Controlleur controlleur = new Controlleur();
 		controlleur.afficherPlanetes();

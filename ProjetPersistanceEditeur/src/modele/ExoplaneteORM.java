@@ -46,6 +46,11 @@ public class ExoplaneteORM
 		session.save(nouveauExoplanete);
 	}
 	
+	public void supprimmer(Exoplanete exoPlanete)
+	{
+		session.delete(exoPlanete);
+	}
+	
 	public void fermerSesion()
 	{
 		session.close();

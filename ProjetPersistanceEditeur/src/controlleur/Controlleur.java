@@ -27,6 +27,16 @@ public class Controlleur
 		vue.afficherExo(planeteString);
 	}
 	
+	public void ajouterPlanete(Exoplanete e)
+	{
+		modeleORM.ecrire(e);
+	}
+	
+	public void supprimmerPlanete(Exoplanete e)
+	{
+		modeleORM.supprimmer(e);
+	}
+	
 	public static void main(String[] args) 
 	{
 		Controlleur controlleur = new Controlleur();

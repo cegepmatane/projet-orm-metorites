@@ -1,6 +1,7 @@
 package vue;
 
 import java.awt.GridLayout;
+import java.awt.event.ActionListener;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -19,25 +20,25 @@ public class FenetrePrincipale extends JFrame
 	JPanel jp2;
 	JPanel jp3;
 	
-	JTextField jlNom;
-	JTextField jlNomEtoile;
-	JTextField jlMasse;
-	JTextField jlRayon;
-	JTextField jlFlux;
-	JTextField jlTemperature;
-	JTextField jlPeriode;
-	JTextField jlDistance;
-	JTextField jlZone;
-	JTextField jlIst;
-	JTextField jlSph;
-	JTextField jlHzd;
-	JTextField jlHzc;
-	JTextField jlHza;
-	JTextField jlPClasse;
-	JTextField jlHClasse;
-	JTextField jlPhi;
-	JTextField jlStatus;
-	JTextField jlDecouverte;
+	JTextField ajouterNom;
+	JTextField ajouterNomEtoile;
+	JTextField ajouterMasse;
+	JTextField ajouterRayon;
+	JTextField ajouterFlux;
+	JTextField ajouterTemperature;
+	JTextField ajouterPeriode;
+	JTextField ajouterDistance;
+	JTextField ajouterZone;
+	JTextField ajouterIst;
+	JTextField ajouterSph;
+	JTextField ajouterHzd;
+	JTextField ajouterHzc;
+	JTextField ajouterHza;
+	JTextField ajouterPClasse;
+	JTextField ajouterHClasse;
+	JTextField ajouterPhi;
+	JTextField ajouterStatus;
+	JTextField ajouterDecouverte;
 	
 	JButton btnAjouter;
 	
@@ -59,43 +60,43 @@ public class FenetrePrincipale extends JFrame
 		jp2 = new JPanel(new GridLayout(30,0));
 		jp3 = new JPanel(new GridLayout(30,0));
 		
-		jlNom = new JTextField();
+		ajouterNom = new JTextField();
 		JLabel nom = new JLabel("Nom");
-		jlNomEtoile = new JTextField();
+		ajouterNomEtoile = new JTextField();
 		JLabel nomEtoile = new JLabel("NomEtoile");
-		jlMasse = new JTextField();
+		ajouterMasse = new JTextField();
 		JLabel masse = new JLabel("Masse");
-		jlRayon = new JTextField();
+		ajouterRayon = new JTextField();
 		JLabel rayon = new JLabel("Rayon");
-		jlFlux = new JTextField();
+		ajouterFlux = new JTextField();
 		JLabel flux = new JLabel("Flux");
-		jlTemperature = new JTextField();
+		ajouterTemperature = new JTextField();
 		JLabel temperature = new JLabel("Temperature");
-		jlPeriode = new JTextField();
+		ajouterPeriode = new JTextField();
 		JLabel periode = new JLabel("Periode");
-		jlDistance = new JTextField();
+		ajouterDistance = new JTextField();
 		JLabel distance = new JLabel("Distance");
-		jlZone = new JTextField();
+		ajouterZone = new JTextField();
 		JLabel zone = new JLabel("Zone");
-		jlIst = new JTextField();
+		ajouterIst = new JTextField();
 		JLabel ist = new JLabel("Ist");
-		jlSph = new JTextField();
+		ajouterSph = new JTextField();
 		JLabel sph = new JLabel("Sph");
-		jlHzd = new JTextField();
+		ajouterHzd = new JTextField();
 		JLabel hzd = new JLabel("Hzd");
-		jlHzc = new JTextField();
+		ajouterHzc = new JTextField();
 		JLabel hzc = new JLabel("Hzc");
-		jlHza = new JTextField();
+		ajouterHza = new JTextField();
 		JLabel hza = new JLabel("Hza");
-		jlPClasse = new JTextField();
+		ajouterPClasse = new JTextField();
 		JLabel pClasse = new JLabel("PClasse");
-		jlHClasse = new JTextField();
+		ajouterHClasse = new JTextField();
 		JLabel hClasse = new JLabel("HClasse");
-		jlPhi = new JTextField();
+		ajouterPhi = new JTextField();
 		JLabel phi = new JLabel("Phi");
-		jlStatus = new JTextField();
+		ajouterStatus = new JTextField();
 		JLabel status = new JLabel("Status");
-		jlDecouverte = new JTextField();
+		ajouterDecouverte = new JTextField();
 		JLabel decouverte = new JLabel("Decouverte");
 		
 		btnAjouter = new JButton("Ajouter");
@@ -106,61 +107,61 @@ public class FenetrePrincipale extends JFrame
 		jtp.addTab("onglet 3", jp3);
 		
 		jp1.add(nom);
-		jp1.add(jlNom);
+		jp1.add(ajouterNom);
 		
 		jp1.add(nomEtoile);
-		jp1.add(jlNomEtoile);
+		jp1.add(ajouterNomEtoile);
 		
 		jp1.add(masse);
-		jp1.add(jlMasse);
+		jp1.add(ajouterMasse);
 		
 		jp1.add(rayon);
-		jp1.add(jlRayon);
+		jp1.add(ajouterRayon);
 		
 		jp1.add(flux);
-		jp1.add(jlFlux);
+		jp1.add(ajouterFlux);
 		
 		jp1.add(temperature);
-		jp1.add(jlTemperature);
+		jp1.add(ajouterTemperature);
 		
 		jp1.add(periode);
-		jp1.add(jlPeriode);
+		jp1.add(ajouterPeriode);
 		
 		jp1.add(distance);
-		jp1.add(jlDistance);
+		jp1.add(ajouterDistance);
 		
 		jp1.add(zone);
-		jp1.add(jlZone);
+		jp1.add(ajouterZone);
 		
 		jp1.add(ist);
-		jp1.add(jlIst);
+		jp1.add(ajouterIst);
 		
 		jp1.add(sph);
-		jp1.add(jlSph);
+		jp1.add(ajouterSph);
 		
 		jp1.add(hzd);
-		jp1.add(jlHzd);
+		jp1.add(ajouterHzd);
 		
 		jp1.add(hzc);
-		jp1.add(jlHzc);
+		jp1.add(ajouterHzc);
 		
 		jp1.add(hza);
-		jp1.add(jlHza);
+		jp1.add(ajouterHza);
 		
 		jp1.add(pClasse);
-		jp1.add(jlPClasse);
+		jp1.add(ajouterPClasse);
 		
 		jp1.add(hClasse);
-		jp1.add(jlHClasse);
+		jp1.add(ajouterHClasse);
 		
 		jp1.add(phi);
-		jp1.add(jlPhi);
+		jp1.add(ajouterPhi);
 		
 		jp1.add(status);
-		jp1.add(jlStatus);
+		jp1.add(ajouterStatus);
 		
 		jp1.add(decouverte);
-		jp1.add(jlDecouverte);
+		jp1.add(ajouterDecouverte);
 		
 		jp1.add(btnAjouter);
 		
@@ -183,157 +184,162 @@ public class FenetrePrincipale extends JFrame
 		
 		jp2.revalidate();
 	}
-
-	public JTextField getJlNom() {
-		return jlNom;
+	
+	public void ajouterActionAuBoutonAjouter(ActionListener action)
+	{
+		btnAjouter.addActionListener(action);
 	}
 
-	public void setJlNom(JTextField jlNom) {
-		this.jlNom = jlNom;
+	public String getAjouterNom() {
+		return ajouterNom.getText();
 	}
 
-	public JTextField getJlNomEtoile() {
-		return jlNomEtoile;
+	public void setAjouterNom(String nom) {
+		this.ajouterNom.setText(nom);
 	}
 
-	public void setJlNomEtoile(JTextField jlNomEtoile) {
-		this.jlNomEtoile = jlNomEtoile;
+	public String getAjouterNomEtoile() {
+		return ajouterNomEtoile.getText();
 	}
 
-	public JTextField getJlMasse() {
-		return jlMasse;
+	public void setAjouterNomEtoile(String nomEtoile) {
+		this.ajouterNomEtoile.setText(nomEtoile);
 	}
 
-	public void setJlMasse(JTextField jlMasse) {
-		this.jlMasse = jlMasse;
+	public String getAjouterMasse() {
+		return ajouterMasse.getText();
 	}
 
-	public JTextField getJlRayon() {
-		return jlRayon;
+	public void setAjouterMasse(String masse) {
+		this.ajouterMasse.setText(masse);
 	}
 
-	public void setJlRayon(JTextField jlRayon) {
-		this.jlRayon = jlRayon;
+	public String getAjouterRayon() {
+		return ajouterRayon.getText();
 	}
 
-	public JTextField getJlFlux() {
-		return jlFlux;
+	public void setAjouterRayon(String rayon) {
+		this.ajouterRayon.setText(rayon);
 	}
 
-	public void setJlFlux(JTextField jlFlux) {
-		this.jlFlux = jlFlux;
+	public String getAjouterFlux() {
+		return ajouterFlux.getText();
 	}
 
-	public JTextField getJlTemperature() {
-		return jlTemperature;
+	public void setAjouterFlux(String flux) {
+		this.ajouterFlux.setText(flux);
 	}
 
-	public void setJlTemperature(JTextField jlTemperature) {
-		this.jlTemperature = jlTemperature;
+	public String getAjouterTemperature() {
+		return ajouterTemperature.getText();
 	}
 
-	public JTextField getJlPeriode() {
-		return jlPeriode;
+	public void setAjouterTemperature(String temperature) {
+		this.ajouterTemperature.setText(temperature);
 	}
 
-	public void setJlPeriode(JTextField jlPeriode) {
-		this.jlPeriode = jlPeriode;
+	public String getAjouterPeriode() {
+		return ajouterPeriode.getText();
 	}
 
-	public JTextField getJlDistance() {
-		return jlDistance;
+	public void setAjouterPeriode(String periode) {
+		this.ajouterPeriode.setText(periode);
 	}
 
-	public void setJlDistance(JTextField jlDistance) {
-		this.jlDistance = jlDistance;
+	public String getAjouterDistance() {
+		return ajouterDistance.getText();
 	}
 
-	public JTextField getJlZone() {
-		return jlZone;
+	public void setAjouterDistance(String distance) {
+		this.ajouterDistance.setText(distance);
 	}
 
-	public void setJlZone(JTextField jlZone) {
-		this.jlZone = jlZone;
+	public String getAjouterZone() {
+		return ajouterZone.getText();
 	}
 
-	public JTextField getJlIst() {
-		return jlIst;
+	public void setAjouterZone(String zone) {
+		this.ajouterZone.setText(zone);
 	}
 
-	public void setJlIst(JTextField jlIst) {
-		this.jlIst = jlIst;
+	public String getAjouterIst() {
+		return ajouterIst.getText();
 	}
 
-	public JTextField getJlSph() {
-		return jlSph;
+	public void setAjouterIst(String ist) {
+		this.ajouterIst.setText(ist);
 	}
 
-	public void setJlSph(JTextField jlSph) {
-		this.jlSph = jlSph;
+	public String getAjouterSph() {
+		return ajouterSph.getText();
 	}
 
-	public JTextField getJlHzd() {
-		return jlHzd;
+	public void setAjouterSph(String sph) {
+		this.ajouterSph.setText(sph);
 	}
 
-	public void setJlHzd(JTextField jlHzd) {
-		this.jlHzd = jlHzd;
+	public String getAjouterHzd() {
+		return ajouterHzd.getText();
 	}
 
-	public JTextField getJlHzc() {
-		return jlHzc;
+	public void setAjouterHzd(String hzd) {
+		this.ajouterHzd.setText(hzd);
 	}
 
-	public void setJlHzc(JTextField jlHzc) {
-		this.jlHzc = jlHzc;
+	public String getAjouterHzc() {
+		return ajouterHzc.getText();
 	}
 
-	public JTextField getJlHza() {
-		return jlHza;
+	public void setAjouterHzc(String hzc) {
+		this.ajouterHzc.setText(hzc);
 	}
 
-	public void setJlHza(JTextField jlHza) {
-		this.jlHza = jlHza;
+	public String getAjouterHza() {
+		return ajouterHza.getText();
 	}
 
-	public JTextField getJlPClasse() {
-		return jlPClasse;
+	public void setAjouterHza(String hza) {
+		this.ajouterHza.setText(hza);
 	}
 
-	public void setJlPClasse(JTextField jlPClasse) {
-		this.jlPClasse = jlPClasse;
+	public String getAjouterPClasse() {
+		return ajouterPClasse.getText();
 	}
 
-	public JTextField getJlHClasse() {
-		return jlHClasse;
+	public void setAjouterPClasse(String pClasse) {
+		this.ajouterPClasse.setText(pClasse);
 	}
 
-	public void setJlHClasse(JTextField jlHClasse) {
-		this.jlHClasse = jlHClasse;
+	public String getAjouterHClasse() {
+		return ajouterHClasse.getText();
 	}
 
-	public JTextField getJlPhi() {
-		return jlPhi;
+	public void setAjouterHClasse(String hClasse) {
+		this.ajouterHClasse.setText(hClasse);
 	}
 
-	public void setJlPhi(JTextField jlPhi) {
-		this.jlPhi = jlPhi;
+	public String getAjouterPhi() {
+		return ajouterPhi.getText();
 	}
 
-	public JTextField getJlStatus() {
-		return jlStatus;
+	public void setAjouterPhi(String phi) {
+		this.ajouterPhi.setText(phi);
 	}
 
-	public void setJlStatus(JTextField jlStatus) {
-		this.jlStatus = jlStatus;
+	public String getAjouterStatus() {
+		return ajouterStatus.getText();
 	}
 
-	public JTextField getJlDecouverte() {
-		return jlDecouverte;
+	public void setAjouterStatus(String status) {
+		this.ajouterStatus.setText(status);
 	}
 
-	public void setJlDecouverte(JTextField jlDecouverte) {
-		this.jlDecouverte = jlDecouverte;
+	public String getAjouterDecouverte() {
+		return ajouterDecouverte.getText();
+	}
+
+	public void setAjouterDecouverte(String decouverte) {
+		this.ajouterDecouverte.setText(decouverte);
 	}
 
 }

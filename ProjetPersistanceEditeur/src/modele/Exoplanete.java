@@ -26,6 +26,29 @@ public class Exoplanete
 	public Exoplanete() {
 	}
 	
+	public Exoplanete(String nom, String nomEtoile, String masse, String rayon, String flux, String temperature, String periode, String distance, String zone,
+			String ist, String sph, String hzd, String hzc, String hza, String pClasse, String hClasse, String phi, String status, String decouverte) 
+	{
+		this.nom=nom;
+		this.nomEtoile=nomEtoile;
+		this.masse=masse;
+		this.rayon=rayon;
+		this.flux=flux;
+		this.temperature=temperature;
+		this.periode=periode;
+		this.distance=distance;
+		this.zone=zone;
+		this.ist=ist;
+		this.sph=sph;
+		this.hzd=hzd;
+		this.hzc=hzc;
+		this.hza=hza;
+		this.hClasse=hClasse;
+		this.phi=phi;
+		this.status=status;
+		this.decouverte=decouverte;
+	}
+	
 	public String getInfos()
 	{
 		return "planete:" + nom + " étoile:" + nomEtoile + " masse:" + masse + " rayon:" + rayon;

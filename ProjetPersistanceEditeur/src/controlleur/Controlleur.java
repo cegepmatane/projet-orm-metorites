@@ -10,24 +10,12 @@ public class Controlleur
 {
 	ExoplaneteORM modeleORM;
 	FenetrePrincipale vue;
+	Exoplanete[] planetes;
 	
 	public Controlleur()
 	{
 		modeleORM = new ExoplaneteORM();
 		vue = new FenetrePrincipale();
-	}
-	
-	private void afficherPlanetes()
-	{		
-		Exoplanete[] planetes = modeleORM.lire();
-		String[] planeteString = new String[planetes.length];
-		
-		for(int i=0;i<planetes.length;i++)
-		{
-			planeteString[i]=planetes[i].getInfos();
-		}
-		
-		vue.afficherExo(planeteString);
 	}
 	
 	private void ajouterPlanete(Exoplanete e)
@@ -52,17 +40,49 @@ public class Controlleur
 						vue.getAjouterHzd(),vue.getAjouterHzc(),vue.getAjouterHza(),vue.getAjouterPClasse(),vue.getAjouterHClasse(),vue.getAjouterPhi(),vue.getAjouterStatus(),
 						vue.getAjouterDecouverte());
 				ajouterPlanete(e);
+				
+				vue.viderAjouter();
 			}
 		};
 		vue.ajouterActionAuBoutonAjouter(action);
 	}
 	
+	private void ajouterPlaneteSuprimmer()
+	{
+		planetes = modeleORM.lire();
+		String[] planeteString = new String[planetes.length];
+		ActionListener[] actions = new ActionListener[planetes.length];
+		
+		for(int i=0;i<planetes.length;i++)
+		{
+			planeteString[i]=planetes[i].getInfos();
+			actions[i]=new ActionListenerSupprimmer(i);
+		}
+		vue.afficherExoplanetes(planeteString, actions);
+	}
 	
+	public class ActionListenerSupprimmer implements ActionListener
+	{
+		int id;
+		
+		public ActionListenerSupprimmer(int id) 
+		{
+			this.id=id;
+		}
+
+		@Override
+		public void actionPerformed(ActionEvent e) 
+		{
+			supprimmerPlanete(planetes[id]);
+			ajouterPlaneteSuprimmer();
+		}
+		
+	}
 	
 	public static void main(String[] args) 
 	{
 		Controlleur controlleur = new Controlleur();
 		controlleur.ajouterActionAuBoutonAjouter();
-		
+		controlleur.ajouterPlaneteSuprimmer();
 	}
 }

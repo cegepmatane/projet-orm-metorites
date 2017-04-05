@@ -26,6 +26,10 @@ public class Exoplanete
 	public Exoplanete() {
 	}
 	
+	public Exoplanete(int id) {
+		this.id=id;
+	}
+	
 	public Exoplanete(String nom, String nomEtoile, String masse, String rayon, String flux, String temperature, String periode, String distance, String zone,
 			String ist, String sph, String hzd, String hzc, String hza, String pClasse, String hClasse, String phi, String status, String decouverte) 
 	{

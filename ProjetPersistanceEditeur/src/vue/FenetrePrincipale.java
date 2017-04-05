@@ -1,8 +1,10 @@
 package vue;
 
 import java.awt.GridLayout;
+import java.awt.Insets;
 import java.awt.event.ActionListener;
 
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -57,7 +59,7 @@ public class FenetrePrincipale extends JFrame
 		getContentPane().add(jtp);
 		
 		jp1 = new JPanel(new GridLayout(45,0));
-		jp2 = new JPanel(new GridLayout(30,0));
+		jp2 = new JPanel(new GridLayout(45,0));
 		jp3 = new JPanel(new GridLayout(30,0));
 		
 		ajouterNom = new JTextField();
@@ -172,14 +174,16 @@ public class FenetrePrincipale extends JFrame
 		setVisible(true);
 	}
 	
-	public void afficherExo(String[] planeteString)
+	public void afficherExoplanetes(String[] planeteString, ActionListener[] actions)
 	{
 		jp2.removeAll();
 		
-		for(String exo : planeteString)
+		for(int i=0 ; i<planeteString.length ; i++)
 		{
-			jp2.add(new JTextField(exo));
-			jp2.add(new JButton());
+			JButton bouton = new JButton("X");
+			bouton.addActionListener(actions[i]);
+			jp2.add(new JTextField(planeteString[i]));
+			jp2.add(bouton);
 		}
 		
 		jp2.revalidate();
@@ -188,6 +192,29 @@ public class FenetrePrincipale extends JFrame
 	public void ajouterActionAuBoutonAjouter(ActionListener action)
 	{
 		btnAjouter.addActionListener(action);
+	}
+	
+	public void viderAjouter()
+	{
+		ajouterNom.setText("");
+		ajouterNomEtoile.setText("");
+		ajouterMasse.setText("");
+		ajouterRayon.setText("");
+		ajouterFlux.setText("");
+		ajouterTemperature.setText("");
+		ajouterPeriode.setText("");
+		ajouterDistance.setText("");
+		ajouterZone.setText("");
+		ajouterIst.setText("");
+		ajouterSph.setText("");
+		ajouterHzd.setText("");
+		ajouterHzc.setText("");
+		ajouterHza.setText("");
+		ajouterPClasse.setText("");
+		ajouterHClasse.setText("");
+		ajouterPhi.setText("");
+		ajouterStatus.setText("");
+		ajouterDecouverte.setText("");
 	}
 
 	public String getAjouterNom() {

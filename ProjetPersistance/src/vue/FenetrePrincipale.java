@@ -5,7 +5,10 @@ import java.awt.Dimension;
 import java.awt.GridLayout;
 import java.awt.Image;
 import java.awt.Insets;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.io.IOException;
+import java.util.LinkedHashMap;
 
 import javax.imageio.ImageIO;
 import javax.swing.GroupLayout;
@@ -16,8 +19,11 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JTabbedPane;
+import javax.swing.JTextField;
 import javax.swing.ScrollPaneConstants;
 import javax.swing.SpringLayout;
+
+import modele.MementoExoplanete;
 
 
 
@@ -42,10 +48,11 @@ public class FenetrePrincipale extends JFrame
 		getContentPane().add(jtp);
 		
 		jp1 = new JPanel();
-		jp2 = new JPanel(new GridLayout(30,0));
+		jp2 = new JPanel();
 		jp3 = new JPanel(new GridLayout(30,0));
 		
 		new GroupLayout(jp1);
+		new GroupLayout(jp2);
 		
 		/*
 		jp1Scroll = new JScrollPane(jp1);
@@ -66,18 +73,30 @@ public class FenetrePrincipale extends JFrame
 		setVisible(true);
 	}
 	
-	public void afficherExo(String[] planeteString) throws IOException
+	public void afficherExo(String[] planeteString, ActionListener action[]) throws IOException
 	{
 		jp1.removeAll();
 		Image img = ImageIO.read(getClass().getResource("../ressources/icone-sauvegarder2.png"));
-		for(String exo : planeteString)
+		for(int i = 0; i<planeteString.length;i++)
 		{
 			JButton bouton = new JButton(new ImageIcon(img));
 			bouton.setMargin(new Insets(0, 0, 0, 0));
-			jp1.add(new JLabel(exo));
+			bouton.addActionListener(action[i]);
+			
+			jp1.add(new JLabel(planeteString[i]));
 			jp1.add(bouton);
 		}
 		jp1.revalidate();
+	}
+	
+	public void afficherMemento(LinkedHashMap<Long, MementoExoplanete> planetes)
+	{
+		jp2.removeAll();
+		for(Long key : planetes.keySet()){
+			jp2.add(new JTextField(planetes.get(key).getExoplanete().getInfos()));
+		}
+		jp2.revalidate();
+		jp2.repaint();
 	}
 
 }

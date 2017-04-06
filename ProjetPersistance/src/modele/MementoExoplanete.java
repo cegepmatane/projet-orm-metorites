@@ -4,8 +4,9 @@ package modele;
 public class MementoExoplanete {
 	protected Exoplanete exoplanete;
 	
-	public MementoExoplanete(){
+	public MementoExoplanete(Exoplanete exoplanete){
 		this.exoplanete = new Exoplanete();
+		setExoplanete(exoplanete);
 	}
 	
 	public Exoplanete getExoplanete(){

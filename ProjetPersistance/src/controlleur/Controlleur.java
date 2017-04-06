@@ -9,6 +9,8 @@ public class Controlleur
 {
 	ExoplaneteORM modeleORM;
 	FenetrePrincipale vue;
+	static Exoplanete[] planetes;
+	
 	
 	public Controlleur()
 	{
@@ -18,7 +20,7 @@ public class Controlleur
 	
 	public void afficherPlanetes() throws IOException
 	{		
-		Exoplanete[] planetes = modeleORM.lire();
+		planetes = modeleORM.lire();
 		String[] planeteString = new String[planetes.length];
 		
 		for(int i=0;i<planetes.length;i++)
@@ -33,5 +35,6 @@ public class Controlleur
 	{
 		Controlleur controlleur = new Controlleur();
 		controlleur.afficherPlanetes();
+		new RechercheTournesol(planetes).executer();
 	}
 }

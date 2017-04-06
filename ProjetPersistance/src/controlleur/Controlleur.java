@@ -4,6 +4,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.IOException;
 import java.util.Date;
+import java.util.List;
 
 import javax.swing.JTextField;
 
@@ -38,7 +39,7 @@ public class Controlleur
 			action[i] = new ActionListenerModifier(i);
 		}
 		
-		vue.afficherExo(planeteString, action);
+		vue.afficherExoplanetes(planeteString, action);
 	}
 	
 	public class ActionListenerModifier implements ActionListener
@@ -54,6 +55,7 @@ public class Controlleur
 		public void actionPerformed(ActionEvent e) 
 		{
 			MementoExoplanete memento = new MementoExoplanete(planetes[id]);
+<<<<<<< HEAD
 			boolean doublon = false;
 			for(Long key : memorisation.getListeMemento().keySet())
 			{
@@ -67,14 +69,45 @@ public class Controlleur
 				vue.afficherMemento(memorisation.getListeMemento());
 			}
 			doublon = false;
+=======
+			memorisation.ajouterMemento(new Date().getTime(), memento);
+			vue.afficherMemento(memorisation.getListeMemento());
+>>>>>>> 83dad7a20ff1d3c03d5aa055561a31dbcabc375e
 		}
 		
+	}
+	
+	public void ajouterRecherche(String recherche)
+	{
+		List<Exoplanete> planetesVoulues;
+		
+		if(recherche.equals("robot"))
+			planetesVoulues = new RechercheRobot(planetes).executer();
+		
+		else if(recherche.equals("humain"))
+			planetesVoulues = new RechercheHumain(planetes).executer();
+		
+		else
+			return;
+		
+		String[] planetesVouluesString = new String[planetesVoulues.size()];
+		
+		for(int index=0 ; index < planetesVouluesString.length ; index++)
+		{
+			planetesVouluesString[index]=planetesVoulues.get(index).getInfos();
+		}
+		if(recherche.equals("robot"))
+			vue.afficherExoplanetesRechercheRobot(planetesVouluesString);
+		
+		else if(recherche.equals("humain"))
+			vue.afficherExoplanetesRechercheHumain(planetesVouluesString);
 	}
 	
 	public static void main(String[] args) throws IOException 
 	{
 		Controlleur controlleur = new Controlleur();
 		controlleur.afficherPlanetes();
-		new RechercheRobot(planetes).executer();
+		controlleur.ajouterRecherche("robot");
+		controlleur.ajouterRecherche("humain");
 	}
 }

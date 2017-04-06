@@ -33,6 +33,7 @@ public class FenetrePrincipale extends JFrame
 	JPanel jp1;
 	JPanel jp2;
 	JPanel jp3;
+	JPanel jp4;
 	JScrollPane jp1Scroll;
 	
 	public FenetrePrincipale()
@@ -50,6 +51,7 @@ public class FenetrePrincipale extends JFrame
 		jp1 = new JPanel();
 		jp2 = new JPanel();
 		jp3 = new JPanel(new GridLayout(30,0));
+		jp4 = new JPanel(new GridLayout(30,0));
 		
 		new GroupLayout(jp1);
 		new GroupLayout(jp2);
@@ -63,7 +65,8 @@ public class FenetrePrincipale extends JFrame
 		
 		jtp.addTab("Liste d'exoplanètes", jp1);
 		jtp.addTab("Mémento", jp2);
-		jtp.addTab("Recherche", jp3);
+		jtp.addTab("Recherche Robot", jp3);
+		jtp.addTab("Recherche Humain", jp4);
 		
 		
 		setSize(600, 1000);
@@ -73,7 +76,7 @@ public class FenetrePrincipale extends JFrame
 		setVisible(true);
 	}
 	
-	public void afficherExo(String[] planeteString, ActionListener action[]) throws IOException
+	public void afficherExoplanetes(String[] planeteString, ActionListener action[]) throws IOException
 	{
 		jp1.removeAll();
 		Image img = ImageIO.read(getClass().getResource("../ressources/icone-sauvegarder2.png"));
@@ -87,6 +90,26 @@ public class FenetrePrincipale extends JFrame
 			jp1.add(bouton);
 		}
 		jp1.revalidate();
+	}
+	
+	public void afficherExoplanetesRechercheRobot(String[] planeteString)
+	{
+		jp3.removeAll();
+		for(int i = 0; i<planeteString.length;i++)
+		{
+			jp3.add(new JLabel(planeteString[i]));
+		}
+		jp3.revalidate();
+	}
+	
+	public void afficherExoplanetesRechercheHumain(String[] planeteString)
+	{
+		jp4.removeAll();
+		for(int i = 0; i<planeteString.length;i++)
+		{
+			jp4.add(new JLabel(planeteString[i]));
+		}
+		jp4.revalidate();
 	}
 	
 	public void afficherMemento(LinkedHashMap<Long, MementoExoplanete> planetes)

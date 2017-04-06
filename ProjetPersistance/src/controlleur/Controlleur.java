@@ -54,9 +54,19 @@ public class Controlleur
 		public void actionPerformed(ActionEvent e) 
 		{
 			MementoExoplanete memento = new MementoExoplanete(planetes[id]);
-			memorisation.ajouterMemento(new Date().getTime(), memento);
-			vue.afficherMemento(memorisation.getListeMemento());
-
+			boolean doublon = false;
+			for(Long key : memorisation.getListeMemento().keySet())
+			{
+				if(memorisation.getListeMemento().get(key).getExoplanete().getId() == memento.getExoplanete().getId()){
+					doublon = true;
+				}
+			}
+			if(memorisation.getListeMemento().size() == 0 || doublon == false)
+			{
+				memorisation.ajouterMemento(new Date().getTime(), memento);
+				vue.afficherMemento(memorisation.getListeMemento());
+			}
+			doublon = false;
 		}
 		
 	}

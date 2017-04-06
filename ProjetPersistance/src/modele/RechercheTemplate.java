@@ -60,15 +60,17 @@ public abstract class RechercheTemplate
 	}
 	
 	// fonction qui ne sera jamais surchargée
-	public void executer()
+	public List<Exoplanete> executer()
 	{
-		this.afficherDonneesOriginales();
+		//this.afficherDonneesOriginales();
 		this.trierHabitable();
 		this.traiterPlanetes();
 		this.trierAtteignable();
 		this.traiterPlanetes();
 		this.trierAnalysable();
-		this.afficherDonneesTriees();
+		//this.afficherDonneesTriees();
+		
+		return planetesApres;
 	}
 	
 	public static boolean isNumeric(String str)

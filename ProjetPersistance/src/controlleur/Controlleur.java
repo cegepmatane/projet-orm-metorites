@@ -2,6 +2,7 @@ package controlleur;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.File;
 import java.io.IOException;
 import java.util.Date;
 import java.util.List;
@@ -98,10 +99,24 @@ public class Controlleur
 			vue.afficherExoplanetesRechercheHumain(planetesVouluesString);
 	}
 	
+	public void initialiserMemento()
+	{
+		File dossier = new File("../sauvegardes/");
+		File[] dossierListe = dossier.listFiles();
+		if (dossierListe != null) {
+			for (File fichier : dossierListe) {
+				//APPELER IMPORTER MEMENTO
+		    }
+		}else{
+			System.out.println("Directoire sauvegardes vide");
+		}
+	}
+	
 	public static void main(String[] args) throws IOException 
 	{
 		Controlleur controlleur = new Controlleur();
 		controlleur.afficherPlanetes();
+		controlleur.initialiserMemento();
 		controlleur.ajouterRecherche("robot");
 		controlleur.ajouterRecherche("humain");
 	}

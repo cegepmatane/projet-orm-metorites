@@ -14,14 +14,9 @@ public class Controlleur
 {
 	ExoplaneteORM modeleORM;
 	FenetrePrincipale vue;
-<<<<<<< HEAD
 	static Exoplanete[] planetes;
-	
-=======
-	Exoplanete[] planetes;
 	String[] planeteString;
 	Memorisation memorisation;
->>>>>>> e0bd9a14710c74b6d9374e8cae2b925b90f9fdc8
 	
 	public Controlleur()
 	{
@@ -33,12 +28,9 @@ public class Controlleur
 	public void afficherPlanetes() throws IOException
 	{		
 		planetes = modeleORM.lire();
-<<<<<<< HEAD
 		String[] planeteString = new String[planetes.length];
-=======
 		planeteString = new String[planetes.length];
 		ActionListener[] action = new ActionListener[planetes.length];
->>>>>>> e0bd9a14710c74b6d9374e8cae2b925b90f9fdc8
 		
 		for(int i=0;i<planetes.length;i++)
 		{
@@ -73,6 +65,6 @@ public class Controlleur
 	{
 		Controlleur controlleur = new Controlleur();
 		controlleur.afficherPlanetes();
-		new RechercheTournesol(planetes).executer();
+		new RechercheRobot(planetes).executer();
 	}
 }

@@ -5,33 +5,56 @@ import java.util.List;
 
 public abstract class RechercheTemplate 
 {
-	protected Exoplanete [] planetesOriginales;
-	protected List<Exoplanete> planetesFinales;
+	protected List<Exoplanete> planetesAvant;
+	protected List<Exoplanete> planetesApres;
 	
-	public RechercheTemplate(Exoplanete [] planetes)
+	public RechercheTemplate(Exoplanete[] planetes)
 	{
-		this.planetesOriginales = planetes;
-		planetesFinales=new LinkedList<Exoplanete>();
+		planetesAvant=new LinkedList<Exoplanete>();
+		planetesApres=new LinkedList<Exoplanete>();
+		
+		for(Exoplanete e : planetes)
+			planetesAvant.add(e);
 	}
 	
-	public void afficherDonneesOriginales()
+	private void afficherDonneesOriginales()
 	{
 		System.out.print("Données originales : ");
-		for(int position=0; position < this.planetesOriginales.length; position++)
+		for(int position=0; position < this.planetesAvant.size(); position++)
 		{
-			System.out.print(this.planetesOriginales[position].getInfos() + " ");
+			System.out.print(this.planetesAvant.get(position).getInfos() + " ");
 		}
 		System.out.println("");
 	}
 	
-	public abstract void trier();
+	protected void trierHabitable()
+	{
+		planetesApres.addAll(planetesAvant);
+	}
 	
-	public void afficherDonneesTriees()
+	protected void trierAtteignable()
+	{
+		planetesApres.addAll(planetesAvant);
+	}
+	
+	protected void trierAnalysable()
+	{
+		planetesApres.addAll(planetesAvant);
+	}
+	
+	private void traiterPlanetes()
+	{
+		planetesAvant.removeAll(planetesAvant);
+		planetesAvant.addAll(planetesApres);
+		planetesApres.removeAll(planetesApres);
+	}
+	
+	private void afficherDonneesTriees()
 	{
 		System.out.print("Données triées : ");
-		for(int position=0; position < this.planetesFinales.size(); position++)
+		for(int position=0; position < this.planetesApres.size(); position++)
 		{
-			System.out.print(this.planetesFinales.get(position).getInfos() + " ");
+			System.out.print(this.planetesApres.get(position).getInfos() + " ");
 		}
 		System.out.println("");
 	}
@@ -40,12 +63,19 @@ public abstract class RechercheTemplate
 	public void executer()
 	{
 		this.afficherDonneesOriginales();
-		this.trier();
+		this.trierHabitable();
+		this.traiterPlanetes();
+		this.trierAtteignable();
+		this.traiterPlanetes();
+		this.trierAnalysable();
 		this.afficherDonneesTriees();
 	}
 	
 	public static boolean isNumeric(String str)
 	{
-	  return str.matches("-?\\d+(\\.\\d+)?");  //match a number with optional '-' and decimal.
+		if(str!=null)
+			return str.matches("-?\\d+(\\.\\d+)?");  //match a number with optional '-' and decimal.
+		
+		return false;
 	}
 }

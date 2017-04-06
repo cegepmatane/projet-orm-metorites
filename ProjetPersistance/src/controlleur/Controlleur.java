@@ -7,8 +7,6 @@ import java.io.IOException;
 import java.util.Date;
 import java.util.List;
 
-import javax.swing.JTextField;
-
 import modele.*;
 import vue.*;
 
@@ -56,6 +54,7 @@ public class Controlleur
 		public void actionPerformed(ActionEvent e) 
 		{
 			MementoExoplanete memento = new MementoExoplanete(planetes[id]);
+			memento.setKey(new Date().getTime());
 			boolean doublon = false;
 			for(Long key : memorisation.getListeMemento().keySet())
 			{
@@ -65,8 +64,13 @@ public class Controlleur
 			}
 			if(memorisation.getListeMemento().size() == 0 || doublon == false)
 			{
-				memorisation.ajouterMemento(new Date().getTime(), memento);
+				memorisation.ajouterMemento(memento.getKey(), memento);
 				vue.afficherMemento(memorisation.getListeMemento());
+				try {
+					ExoplaneteHelper.write(memento.getExoplanete(), "sauvegarde-" + memento.getKey());
+				} catch (Exception e1) {
+					e1.printStackTrace();
+				}
 			}
 			doublon = false;
 		}
@@ -99,20 +103,20 @@ public class Controlleur
 			vue.afficherExoplanetesRechercheHumain(planetesVouluesString);
 	}
 	
-	public void initialiserMemento()
+	public void initialiserMemento() throws Exception
 	{
-		File dossier = new File("../sauvegardes/");
+		File dossier = new File("src/sauvegardes/");
 		File[] dossierListe = dossier.listFiles();
-		if (dossierListe != null) {
-			for (File fichier : dossierListe) {
-				//APPELER IMPORTER MEMENTO
-		    }
-		}else{
-			System.out.println("Directoire sauvegardes vide");
+		for (File fichier : dossierListe) {
+			Exoplanete exo = ExoplaneteHelper.read(fichier.getName());
+			MementoExoplanete memento = new MementoExoplanete(exo);
+			memorisation.ajouterMemento(new Date().getTime(), memento);
 		}
+		vue.afficherMemento(memorisation.getListeMemento());
+
 	}
 	
-	public static void main(String[] args) throws IOException 
+	public static void main(String[] args) throws Exception 
 	{
 		Controlleur controlleur = new Controlleur();
 		controlleur.afficherPlanetes();

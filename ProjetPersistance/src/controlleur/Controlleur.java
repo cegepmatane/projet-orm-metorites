@@ -55,7 +55,6 @@ public class Controlleur
 		public void actionPerformed(ActionEvent e) 
 		{
 			MementoExoplanete memento = new MementoExoplanete(planetes[id]);
-<<<<<<< HEAD
 			boolean doublon = false;
 			for(Long key : memorisation.getListeMemento().keySet())
 			{
@@ -69,10 +68,6 @@ public class Controlleur
 				vue.afficherMemento(memorisation.getListeMemento());
 			}
 			doublon = false;
-=======
-			memorisation.ajouterMemento(new Date().getTime(), memento);
-			vue.afficherMemento(memorisation.getListeMemento());
->>>>>>> 83dad7a20ff1d3c03d5aa055561a31dbcabc375e
 		}
 		
 	}

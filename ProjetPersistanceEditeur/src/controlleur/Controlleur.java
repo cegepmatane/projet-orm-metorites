@@ -42,6 +42,7 @@ public class Controlleur
 				ajouterPlanete(e);
 				
 				vue.viderAjouter();
+				ajouterPlaneteSuprimmer();
 			}
 		};
 		vue.ajouterActionAuBoutonAjouter(action);

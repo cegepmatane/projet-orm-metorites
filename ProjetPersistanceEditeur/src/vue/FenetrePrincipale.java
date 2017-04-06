@@ -60,7 +60,6 @@ public class FenetrePrincipale extends JFrame
 		
 		jp1 = new JPanel(new GridLayout(45,0));
 		jp2 = new JPanel(new GridLayout(45,0));
-		jp3 = new JPanel(new GridLayout(30,0));
 		
 		ajouterNom = new JTextField();
 		JLabel nom = new JLabel("Nom");
@@ -105,8 +104,7 @@ public class FenetrePrincipale extends JFrame
 		
 		
 		jtp.addTab("ajouter", jp1);
-		jtp.addTab("onglet 2", jp2);
-		jtp.addTab("onglet 3", jp3);
+		jtp.addTab("supprimer", jp2);
 		
 		jp1.add(nom);
 		jp1.add(ajouterNom);
@@ -185,8 +183,9 @@ public class FenetrePrincipale extends JFrame
 			jp2.add(new JTextField(planeteString[i]));
 			jp2.add(bouton);
 		}
-		
+		jp2.repaint();
 		jp2.revalidate();
+		
 	}
 	
 	public void ajouterActionAuBoutonAjouter(ActionListener action)

@@ -6,6 +6,7 @@ import java.util.LinkedList;
 import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
+import org.hibernate.Transaction;
 import org.hibernate.cfg.Configuration;
 
 public class ExoplaneteORM 
@@ -47,7 +48,9 @@ public class ExoplaneteORM
 	
 	public void supprimmer(Exoplanete exoPlanete)
 	{
-		session.createQuery("delete Exoplanete where id = " + exoPlanete.getId()); //help
+		Transaction t = session.beginTransaction();
+		session.delete(exoPlanete);
+		t.commit();
 	}
 	
 	public void fermerSesion()

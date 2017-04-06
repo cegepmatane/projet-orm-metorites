@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 04, 2017 at 12:13 PM
+-- Generation Time: Apr 06, 2017 at 12:05 AM
 -- Server version: 5.7.11
 -- PHP Version: 5.6.19
 
@@ -38,14 +38,14 @@ CREATE TABLE `exoplanetes` (
   `periode` varchar(19) DEFAULT NULL,
   `distance` varchar(19) DEFAULT NULL,
   `zone` varchar(25) DEFAULT NULL,
-  `ist` decimal(3,2) DEFAULT NULL,
-  `sph` decimal(3,2) DEFAULT NULL,
+  `ist` varchar(10) DEFAULT NULL,
+  `sph` varchar(10) DEFAULT NULL,
   `hzd` varchar(6) DEFAULT NULL,
   `hzc` varchar(5) DEFAULT NULL,
   `hza` varchar(6) DEFAULT NULL,
   `pClasse` varchar(22) DEFAULT NULL,
   `hClasse` varchar(14) DEFAULT NULL,
-  `phi` decimal(3,2) DEFAULT NULL,
+  `phi` varchar(10) DEFAULT NULL,
   `distance2` varchar(19) DEFAULT NULL,
   `status` varchar(18) DEFAULT NULL,
   `decouverte` varchar(13) DEFAULT NULL
@@ -118,7 +118,7 @@ ALTER TABLE `exoplanetes`
 -- AUTO_INCREMENT for table `exoplanetes`
 --
 ALTER TABLE `exoplanetes`
-  MODIFY `id_exoplanete` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=44;
+  MODIFY `id_exoplanete` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=45;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
